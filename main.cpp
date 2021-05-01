@@ -7,22 +7,31 @@
 #include<string>
 #include<vector>
 #include<iomanip>
+#include "Input_Validation_Extended.h"
 using namespace std; 
 
 class MenuItem
 {
-  private:
-  string name;
-  double itemCost; 
-  string desc; 
-  char addLetter; 
-  char removeLetter;
-  int count; 
-  public:
-  
+  public: 
+    string name;
+    double itemCost; 
+    string desc; 
+    char addLetter; 
+    char removeLetter;
+    int count; 
+    MenuItem(){}
+    MenuItem(string name, double itemCost,char addLetter, char removeLetter)
+    {
+      name = name;
+      itemCost = itemCost;
+      addLetter = addLetter;
+      desc = "deliciously tasty!!";
+      count = 0;
+
+    }
 };
 //function definitions
-void getPopulateMenu(vector<MenuItem> &entireMenu)
+void populateMenu(vector<MenuItem> &entireMenu)
 {
   //put some default values in our Menu
   const int numItems = 7; 
